@@ -1,6 +1,8 @@
 const assert = require('assert');
 const g = require('../js/grid');
 const t = require('../js/tile');
+const {Builder, By, Key, until} = require('selenium-webdriver');
+
 
 describe('Unit tests', function () {
     describe('Grid', function () {
@@ -51,6 +53,23 @@ describe('Unit tests', function () {
             });
 
         });
-        describe('');
+    });
+    describe('UI', async function () {
+        await it('should not fail', async function () {
+            let driver = await new Builder().forBrowser('chrome').build();
+            try {
+                // Navigate to URL
+                await driver.get('https://play2048.co');
+
+
+
+                // Enter text "cheese" and perform keyboard action "Enter"
+                // await driver.findElement(By.name('q')).sendKeys('cheese', Key.ENTER);
+                // let firstResult = await driver.wait(until.elementLocated(By.css('h3')), 10000);
+                // console.log(await firstResult.getAttribute('textContent'));
+            } finally {
+                await driver.quit();
+            }
+        });
     });
 });
