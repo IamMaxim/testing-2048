@@ -59,63 +59,63 @@ describe('Unit tests', function () {
         });
     });
     describe('Input', function () {
-        // it("Supported keyboard events are processed (equivalence class testing)", function () {
-        //     // All supported keyboard events correspond to the same class;
-        //     // All unsupported keyboard events also correspond to the same class.
-        //
-        //     let gm = new gmm.GameManager(4, kim.KeyboardInputManager, ha.HTMLActuator, lsm.LocalStorageManager);
-        //     let initialGrid = g.Grid.fromState(gm.grid.serialize());
-        //
-        //     // let modifiedGM = GameManager.fromState(gm.serialize());
-        //     // modifiedGM.move(0);
-        //     // let expectedGrid = modifiedGM.grid();
-        //
-        //     let compareGrids = function(grid1, grid2) {
-        //         for (let i = 0; i < 4; i++)
-        //             for (let j = 0; i < 4; j++) {
-        //                 if (grid1[i][j] !== grid2[i][j])
-        //                     return false;
-        //             }
-        //         return true;
-        //     };
-        //
-        //     let ev = new gm.KeyboardEvent('keydown', { keyCode: 39 });
-        //     dispatchEvent(ev);
-        //
-        //     // gm.move(0);
-        //     let finalGrid = gm.grid;
-        //
-        //     assert.ok(!compareGrids(initialGrid, finalGrid));
-        // });
+        it("Supported keyboard events are processed (equivalence class testing)", function () {
+            // All supported keyboard events correspond to the same class;
+            // All unsupported keyboard events also correspond to the same class.
 
-        // it("Unsupported keyboard events are not processed (equivalence class testing)", function () {
-        //     // All supported keyboard events correspond to the same class;
-        //     // All unsupported keyboard events also correspond to the same class.
-        //
-        //     let gm = new gmm.GameManager(4, kim.KeyboardInputManager, ha.HTMLActuator, lsm.LocalStorageManager);
-        //     let initialGrid = g.Grid.fromState(gm.grid.serialize());
-        //
-        //     // let modifiedGM = GameManager.fromState(gm.serialize());
-        //     // modifiedGM.move(0);
-        //     // let expectedGrid = modifiedGM.grid();
-        //
-        //     let compareGrids = function(grid1, grid2) {
-        //         for (let i = 0; i < 4; i++)
-        //             for (let j = 0; i < 4; j++) {
-        //                 if (grid1[i][j] !== grid2[i][j])
-        //                     return false;
-        //             }
-        //         return true;
-        //     };
-        //
-        //     let ev = new KeyboardEvent('keydown', { keyCode: 1 });
-        //     dispatchEvent(ev);
-        //
-        //     // gm.move(0);
-        //     let finalGrid = gm.grid;
-        //
-        //     assert.ok(compareGrids(initialGrid, finalGrid));
-        // });
+            let gm = new gmm.GameManager(4, kim.KeyboardInputManager, ha.HTMLActuator, lsm.LocalStorageManager);
+            let initialGrid = g.Grid.fromState(gm.grid.serialize());
+
+            // let modifiedGM = GameManager.fromState(gm.serialize());
+            // modifiedGM.move(0);
+            // let expectedGrid = modifiedGM.grid();
+
+            let compareGrids = function (grid1, grid2) {
+                for (let i = 0; i < 4; i++)
+                    for (let j = 0; i < 4; j++) {
+                        if (grid1[i][j] !== grid2[i][j])
+                            return false;
+                    }
+                return true;
+            };
+
+            let ev = new gm.KeyboardEvent('keydown', {keyCode: 39});
+            dispatchEvent(ev);
+
+            // gm.move(0);
+            let finalGrid = gm.grid;
+
+            assert.ok(!compareGrids(initialGrid, finalGrid));
+        });
+
+        it("Unsupported keyboard events are not processed (equivalence class testing)", function () {
+            // All supported keyboard events correspond to the same class;
+            // All unsupported keyboard events also correspond to the same class.
+
+            let gm = new gmm.GameManager(4, kim.KeyboardInputManager, ha.HTMLActuator, lsm.LocalStorageManager);
+            let initialGrid = g.Grid.fromState(gm.grid.serialize());
+
+            // let modifiedGM = GameManager.fromState(gm.serialize());
+            // modifiedGM.move(0);
+            // let expectedGrid = modifiedGM.grid();
+
+            let compareGrids = function (grid1, grid2) {
+                for (let i = 0; i < 4; i++)
+                    for (let j = 0; i < 4; j++) {
+                        if (grid1[i][j] !== grid2[i][j])
+                            return false;
+                    }
+                return true;
+            };
+
+            let ev = new KeyboardEvent('keydown', {keyCode: 1});
+            dispatchEvent(ev);
+
+            // gm.move(0);
+            let finalGrid = gm.grid;
+
+            assert.ok(compareGrids(initialGrid, finalGrid));
+        });
 
     });
     describe('UI', async function () {
@@ -135,7 +135,7 @@ describe('Unit tests', function () {
                 // modifiedGM.move(0);
                 // let expectedGrid = modifiedGM.grid();
 
-                let compareGrids = function(grid1, grid2) {
+                let compareGrids = function (grid1, grid2) {
                     for (let i = 0; i < 4; i++)
                         for (let j = 0; i < 4; j++) {
                             if (grid1[i][j] !== grid2[i][j])
@@ -144,7 +144,7 @@ describe('Unit tests', function () {
                     return true;
                 };
 
-                let ev = new KeyboardEvent('keydown', { keyCode: 1 });
+                let ev = new KeyboardEvent('keydown', {keyCode: 1});
                 dispatchEvent(ev);
 
                 // gm.move(0);
