@@ -1,0 +1,8 @@
+{
+  "name": "2048",
+  "version": "1.0.0",
+  "esversion": 8,
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0"
+  }
+}
